@@ -134,58 +134,78 @@ This project is developed for **academic use** to demonstrate:
 - Modular and maintainable app structure
 
 ---
-## 📸 Application Output Screenshots
+## 📸 Output Screenshots
 
-The following screenshots demonstrate the complete workflow of the Smart Attendance System, from login to attendance reporting.
+This section presents the output screens of the Smart Attendance System application.
 
-### 🔐 Login & Authentication
-![Login Screen](app/screenshots/Screenshot_20251220-115257_Smart Attendance System.jpg)
-![Student Login](app/screenshots/Screenshot_20251220-115305_Smart Attendance System.jpg)
+---
+
+### 🔐 Login Screen
+![Login Screen](app/screenshots/Screenshot_20251220-115257_Smart%20Attendance%20System.jpg)
+
+---
+
+### 👨‍🎓 Student Login
+![Student Login](app/screenshots/Screenshot_20251220-115305_Smart%20Attendance%20System.jpg)
 
 ---
 
 ### 👨‍🎓 Student Dashboard
-![Student Dashboard](app/screenshots/Screenshot_20251220-115315_Smart Attendance System.jpg)
+![Student Dashboard](app/screenshots/Screenshot_20251220-115315_Smart%20Attendance%20System.jpg)
 
 ---
 
-### 📷 Face Registration (One-Time)
-![Face Registration Screen](app/screenshots/Screenshot_20251220-115456_Smart Attendance System.jpg)
-![Face Capture](app/screenshots/Screenshot_20251220-115511_Smart Attendance System.jpg)
+### 📷 Face Registration
+![Face Registration](app/screenshots/Screenshot_20251220-115456_Smart%20Attendance%20System.jpg)
+
+![Face Capture](app/screenshots/Screenshot_20251220-115511_Smart%20Attendance%20System.jpg)
 
 ---
 
-### ✅ Face Verification Before Attendance
-![Face Verification Screen](app/screenshots/Screenshot_20251220-115528_Smart Attendance System.jpg)
-![Live Face Capture](app/screenshots/Screenshot_20251220-115545_Smart Attendance System.jpg)
+### ✅ Face Verification
+![Face Verification](app/screenshots/Screenshot_20251220-115528_Smart%20Attendance%20System.jpg)
+
+![Live Face Capture](app/screenshots/Screenshot_20251220-115545_Smart%20Attendance%20System.jpg)
 
 ---
 
 ### 📝 Attendance Marked Successfully
-![Attendance Success](app/screenshots/Screenshot_20251220-115609_Smart Attendance System.jpg)
-![Presence Recorded](app/screenshots/Screenshot_20251220-115631_Smart Attendance System.jpg)
+![Attendance Marked](app/screenshots/Screenshot_20251220-115609_Smart%20Attendance%20System.jpg)
+
+![Presence Recorded](app/screenshots/Screenshot_20251220-115631_Smart%20Attendance%20System.jpg)
 
 ---
 
-### 👨‍🏫 Faculty Attendance Session
-![Faculty Dashboard](app/screenshots/Screenshot_20251220-115659_Smart Attendance System.jpg)
-![Session Creation](app/screenshots/Screenshot_20251220-115728_Smart Attendance System.jpg)
-![Attendance In Progress](app/screenshots/Screenshot_20251220-115742_Smart Attendance System.jpg)
+### 👨‍🏫 Faculty Dashboard
+![Faculty Dashboard](app/screenshots/Screenshot_20251220-115659_Smart%20Attendance%20System.jpg)
 
 ---
 
-### 📊 Attendance Reports
-![Attendance Report](app/screenshots/Screenshot_20251220-115748_Smart Attendance System.jpg)
-![Student Attendance View](app/screenshots/Screenshot_20251220-115757_Smart Attendance System.jpg)
-![Detailed Attendance Record](app/screenshots/Screenshot_20251220-115833_Smart Attendance System.jpg)
-![Monthly Report](app/screenshots/Screenshot_20251220-115841_Smart Attendance System.jpg)
+### 🗓️ Attendance Session Creation
+![Session Creation](app/screenshots/Screenshot_20251220-115728_Smart%20Attendance%20System.jpg)
+
+---
+
+### 📋 Attendance in Progress
+![Attendance In Progress](app/screenshots/Screenshot_20251220-115742_Smart%20Attendance%20System.jpg)
+
+---
+
+### 📊 Attendance Report
+![Attendance Report](app/screenshots/Screenshot_20251220-115748_Smart%20Attendance%20System.jpg)
+
+![Student Attendance View](app/screenshots/Screenshot_20251220-115757_Smart%20Attendance%20System.jpg)
+
+![Detailed Attendance Record](app/screenshots/Screenshot_20251220-115833_Smart%20Attendance%20System.jpg)
+
+![Monthly Attendance Report](app/screenshots/Screenshot_20251220-115841_Smart%20Attendance%20System.jpg)
 
 ---
 
 ### ✅ Session Completion
-![Session Closed](app/screenshots/Screenshot_20251220-115905_Smart Attendance System.jpg)
-![Final Submission Screen](app/screenshots/Screenshot_20251220-120017_Smart Attendance System.jpg)
+![Session Closed](app/screenshots/Screenshot_20251220-115905_Smart%20Attendance%20System.jpg)
 
+![Final Output Screen](app/screenshots/Screenshot_20251220-120017_Smart%20Attendance%20System.jpg)
 
 ## 👤 Author
 

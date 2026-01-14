@@ -1,0 +1,107 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    
+    "students": {
+      ".read": "auth != null",
+      ".write": false,
+      
+      "$student_id": {
+        ".read": "auth != null && (auth.token.email.endsWith('@saec.ac.in'))",
+        ".write": "auth != null && auth.token.email.endsWith('@saec.ac.in')",
+        
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "email": {
+          ".validate": "newData.isString() && newData.val().matches(/^[a-zA-Z0-9._%+-]+@saec\\.ac\\.in$/)"
+        },
+        "branch": {
+          ".validate": "newData.isString() && newData.val().matches(/^(CSE|IT|ECE|EEE|MECH|CIVIL)$/)"
+        },
+        "year": {
+          ".validate": "newData.isString() && newData.val().matches(/^[1-4]$/)"
+        },
+        "section": {
+          ".validate": "newData.isString() && newData.val().matches(/^[A-Z]$/)"
+        },
+        "hardware_id": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "face_data": {
+          ".validate": "newData.isString()"
+        },
+        "face_registered_at": {
+          ".validate": "newData.isNumber()"
+        },
+        "face_registration_device": {
+          ".validate": "newData.isString()"
+        },
+        "attendance": {
+          ".read": "auth != null",
+          ".write": "auth != null && auth.token.email.endsWith('@saec.ac.in')",
+          
+          "$session_id": {
+            ".validate": "newData.isString() && (newData.val() == 'present' || newData.val() == 'absent')"
+          }
+        }
+      }
+    },
+    
+    "faculty": {
+      ".read": "auth != null && auth.token.email.endsWith('@saec.ac.in')",
+      ".write": false,
+      
+      "$faculty_id": {
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "email": {
+          ".validate": "newData.isString() && newData.val().matches(/^[a-zA-Z0-9._%+-]+@saec\\.ac\\.in$/)"
+        },
+        "department": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        }
+      }
+    },
+    
+    "attendance_sessions": {
+      ".read": "auth != null && auth.token.email.endsWith('@saec.ac.in')",
+      ".write": "auth != null && auth.token.email.endsWith('@saec.ac.in')",
+      
+      "$session_id": {
+        "branch": {
+          ".validate": "newData.isString() && newData.val().matches(/^(CSE|IT|ECE|EEE|MECH|CIVIL)$/)"
+        },
+        "year": {
+          ".validate": "newData.isString() && newData.val().matches(/^[1-4]$/)"
+        },
+        "section": {
+          ".validate": "newData.isString() && newData.val().matches(/^[A-Z]$/)"
+        },
+        "subject": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "date": {
+          ".validate": "newData.isString() && newData.val().matches(/^\\d{2}\\/\\d{2}\\/\\d{4}$/)"
+        },
+        "start_time": {
+          ".validate": "newData.isString() && newData.val().matches(/^\\d{2}:\\d{2}$/)"
+        },
+        "end_time": {
+          ".validate": "newData.isString() && newData.val().matches(/^\\d{2}:\\d{2}$/)"
+        },
+        "status": {
+          ".validate": "newData.isString() && (newData.val() == 'active' || newData.val() == 'ended' || newData.val() == 'expired')"
+        },
+        "faculty_id": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "created_at": {
+          ".validate": "newData.isNumber()"
+        }
+      }
+    }
+  }
+}

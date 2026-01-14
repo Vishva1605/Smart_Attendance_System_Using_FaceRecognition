@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".TakeAttendanceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- Welcome Faculty -->
+        <TextView
+            android:id="@+id/tv_welcome_faculty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome, Faculty"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Instructions -->
+        <TextView
+            android:id="@+id/tv_instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select class details below to start an attendance session."
+            android:textColor="@color/darker_gray"
+            android:textSize="14sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Header Image -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/image_attendance_two"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerInside"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Branch Spinner -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <Spinner
+                android:id="@+id/spinner_branch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:spinnerMode="dropdown" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Year Spinner -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <Spinner
+                android:id="@+id/spinner_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:spinnerMode="dropdown" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Section Spinner -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <Spinner
+                android:id="@+id/spinner_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:spinnerMode="dropdown" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Subject Spinner -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <Spinner
+                android:id="@+id/spinner_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:spinnerMode="dropdown" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Start Attendance Button -->
+        <Button
+            android:id="@+id/btn_start_session"
+            style="@style/button_style"
+            android:text="Start Attendance Session" />
+
+        <!-- View Reports Button -->
+        <Button
+            android:id="@+id/btn_view_reports"
+            style="@style/button_style"
+            android:text="View Attendance Reports"
+            android:layout_marginTop="12dp" />
+
+        <!-- Logout Button -->
+        <Button
+            android:id="@+id/btn_logout"
+            style="@style/button_style"
+            android:text="Logout"
+            android:layout_marginTop="12dp" />
+
+        <!-- Reset Password Button -->
+        <Button
+            android:id="@+id/btn_reset_password"
+            style="@style/button_style"
+            android:text="Reset Password"
+            android:layout_marginTop="12dp" />
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Secure • Reliable • Efficient"
+            android:textColor="@color/darker_gray"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+</ScrollView>

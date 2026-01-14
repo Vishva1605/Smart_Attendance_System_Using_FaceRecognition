@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <!-- App Logo -->
+        <ImageView
+            android:id="@+id/iv_app_logo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/image_home_page"
+            android:contentDescription="Smart Attendance System"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerInside" />
+
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/tv_app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Smart Attendance System"
+            android:textColor="@color/main_500"
+            android:fontFamily="serif"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tv_app_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SAEC University"
+            android:textColor="@color/main_500"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tv_app_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Secure and efficient attendance management system.\nChoose your login type to continue."
+            android:textColor="@color/darker_gray"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginBottom="30dp" />
+
+        <!-- Student Login Button -->
+        <Button
+            android:id="@+id/btn_login_to_student"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Student Login"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/style_button"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="12dp"
+            android:gravity="center" />
+
+        <!-- Faculty Login Button -->
+        <Button
+            android:id="@+id/btn_login_to_faculty"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Faculty Login"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/style_button"
+            android:drawableStart="@drawable/icon_school"
+            android:drawablePadding="12dp"
+            android:gravity="center" />
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Secure • Reliable • Efficient"
+            android:textColor="@color/darker_gray"
+            android:textSize="12sp"
+            android:layout_marginTop="30dp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+</ScrollView>

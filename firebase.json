@@ -1,0 +1,57 @@
+{
+  "students": {
+    "111922CS01164": {
+      "name": "Vishva K S",
+      "email": "2216171@saec.ac.in",
+      "branch": "CSE",
+      "year": "4",
+      "section": "C",
+      "hardware_id": "",
+      "face_data": "null"
+    },
+    "111922CS01007": {
+      "name": "Akshayapriya S A",
+      "email": "2216133@saec.ac.in",
+      "branch": "CSE",
+      "year": "4",
+      "section": "A",
+      "hardware_id": "",
+      "face_data": "null"
+    },
+    "111922CS01309": {
+      "name": "Vishnu R",
+      "email": "2216185L@saec.ac.in",
+      "branch": "CSE",
+      "year": "4",
+      "section": "C",
+      "hardware_id": "",
+      "face_data": "null"
+    },
+    "111922CS01121": {
+      "name": "Sethuraman S",
+      "email": "2216113@saec.ac.in",
+      "branch": "CSE",
+      "year": "4",
+      "section": "C",
+      "hardware_id": "",
+      "face_data": "null"
+    }
+  },
+  "faculty": {
+    "faculty_cse_001": {
+      "name": "Priya Dharshini",
+      "email": "faculty@saec.ac.in",
+      "department": "Computer Science"
+    },
+    "faculty_cse_002": {
+      "name": "Prof. Sunita Agarwal",
+      "email": "sunita.agarwal@saec.ac.in",
+      "department": "Computer Science"
+    },
+    "faculty_ece_001": {
+      "name": "Dr. Amit Verma",
+      "email": "amit.verma@saec.ac.in",
+      "department": "Electronics"
+    }
+  }
+}

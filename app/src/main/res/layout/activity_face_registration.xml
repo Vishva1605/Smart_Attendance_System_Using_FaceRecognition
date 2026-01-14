@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Instructions -->
+        <TextView
+            android:id="@+id/tv_instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📸 Face Registration"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:background="#fff"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp" />
+
+        <!-- Student Info -->
+        <TextView
+            android:id="@+id/tv_student_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="👤 Student Information"
+            android:textSize="14sp"
+            android:textColor="#666"
+            android:background="#fff"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp" />
+
+        <!-- Reference Face Image Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📷 Your Reference Photo"
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Reference Image -->
+        <ImageView
+            android:id="@+id/iv_reference_face"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#ddd"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp" />
+
+        <!-- Registration Status -->
+        <TextView
+            android:id="@+id/tv_registration_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="#666"
+            android:background="#fff"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp" />
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone" />
+
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/btn_capture_face"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📸 Capture Face"
+            android:background="#4CAF50"
+            android:textColor="#fff"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_register_face"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✅ Register Face"
+            android:background="#2196F3"
+            android:textColor="#fff"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⬅️ Back"
+            android:background="#757575"
+            android:textColor="#fff"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>

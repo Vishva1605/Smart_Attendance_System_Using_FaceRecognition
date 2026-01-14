@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary_color">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary_light">#BBDEFB</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary_color">#FF9800</color>
+    <color name="secondary_dark">#F57C00</color>
+    <color name="secondary_light">#FFE0B2</color>
+
+    <!-- Status Colors -->
+    <color name="success_color">#4CAF50</color>
+    <color name="success_dark">#388E3C</color>
+    <color name="success_light">#C8E6C9</color>
+    <color name="warning_color">#FF9800</color>
+    <color name="warning_dark">#F57C00</color>
+    <color name="warning_light">#FFE0B2</color>
+    <color name="error_color">#F44336</color>
+    <color name="error_dark">#D32F2F</color>
+    <color name="error_light">#FFCDD2</color>
+    <color name="info_color">#2196F3</color>
+    <color name="info_dark">#1976D2</color>
+    <color name="info_light">#E3F2FD</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- Background Colors -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="background_white">#FFFFFF</color>
+    <color name="background_dark">#303030</color>
+
+    <!-- Card and Surface Colors -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="surface_color">#FFFFFF</color>
+    <color name="divider_color">#E0E0E0</color>
+
+    <!-- Attendance Status Colors -->
+    <color name="present_color">#4CAF50</color>
+    <color name="absent_color">#F44336</color>
+    <color name="present_background">#E8F5E9</color>
+    <color name="absent_background">#FFEBEE</color>
+
+    <!-- Face Recognition Colors -->
+    <color name="face_detected_color">#4CAF50</color>
+    <color name="face_not_detected_color">#F44336</color>
+    <color name="face_processing_color">#FF9800</color>
+
+    <!-- Placeholder Colors -->
+    <color name="image_placeholder">#E0E0E0</color>
+    <color name="camera_overlay">#80000000</color>
+
+    <!-- Transparent Colors -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent_black">#80000000</color>
+    <color name="semi_transparent_white">#80FFFFFF</color>
+
+    <!-- Previously Missing Colors -->
+    <color name="main_500">#2196F3</color>
+    <color name="main_600">#1E88E5</color>
+    <color name="main_700">#1976D2</color>
+    <color name="black">#000000</color>
+    <color name="darker_gray">#A9A9A9</color>
+    <color name="white">#FFFFFF</color>
+    <color name="teal_700">#00796B</color>
+    <color name="teal_200">#80CBC4</color>
+    <color name="light_blue_50">#E3F2FD</color>
+    <color name="green_50">#E8F5E9</color>
+    <color name="green_100">#C8E6C9</color>
+    <color name="green_500">#4CAF50</color>
+    <color name="green_700">#388E3C</color>
+    <color name="orange_50">#FFF3E0</color>
+    <color name="orange_700">#F57C00</color>
+    <color name="red_500">#F44336</color>
+    <color name="success_green">#4CAF50</color>
+    <color name="gradient_blue">#2196F3</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="purple_500">#9C27B0</color>
+    <color name="purple_700">#7B1FA2</color>
+
+    <!-- Aliases for layouts -->
+    <color name="info_background">#E3F2FD</color>        <!-- same as info_light -->
+    <color name="success_background">#C8E6C9</color>    <!-- same as success_light -->
+    <color name="blue_500">#2196F3</color>             <!-- same as main_500 -->
+</resources>

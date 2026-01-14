@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/success_background"
+    tools:context=".PresenceRecordedActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <!-- Success Animation Container -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            app:cardCornerRadius="80dp"
+            app:cardElevation="12dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="30dp">
+
+            <ImageView
+                android:id="@+id/iv_success_icon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/submitted"
+                android:contentDescription="Success"
+                android:scaleType="centerInside" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Success Message Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center">
+
+                <!-- Success Title -->
+                <TextView
+                    android:id="@+id/tv_success_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎉 Attendance Marked Successfully!"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/success_green"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Session Details -->
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="2dp"
+                    android:background="@color/success_green"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_session_subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subject: Data Structures"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"
+                    android:drawableStart="@drawable/icon_book"
+                    android:drawablePadding="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_session_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date: 4 Nov 2023"
+                    android:textSize="16sp"
+                    android:textColor="@color/darker_gray"
+                    android:layout_marginBottom="4dp"
+                    android:drawableStart="@drawable/calendar"
+                    android:drawablePadding="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_session_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time: 5:00 PM"
+                    android:textSize="16sp"
+                    android:textColor="@color/darker_gray"
+                    android:drawableStart="@drawable/time"
+                    android:drawablePadding="8dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Action Buttons -->
+        <Button
+            android:id="@+id/btn_view_report"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="📊 View My Attendance Report"
+            android:background="@drawable/style_button"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btn_back_to_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🏠 Back to Dashboard"
+            android:background="@drawable/style_button_secondary"
+            android:textSize="18sp"
+            android:textAllCaps="false" />
+
+        <!-- Motivational Message -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Great job! Keep up the good attendance! 🌟"
+            android:textColor="@color/success_green"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:layout_marginTop="20dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+</ScrollView>

@@ -15,19 +15,21 @@ app/
 ├── google-services.json
 ├── proguard-rules.pro
 └── src/
-├── main/
-│ ├── AndroidManifest.xml
-│ ├── res/
-│ │ ├── layout/
-│ │ ├── drawable/
-│ │ ├── mipmap-*/
-│ │ ├── values/
-│ │ ├── values-night/
-│ │ └── xml/
-│ └── java/
-│ └── com/example/smart_attendance_system/
-├── test/
-└── androidTest/
+    ├── main/
+    │   ├── AndroidManifest.xml
+    │   ├── res/
+    │   │   ├── layout/
+    │   │   ├── drawable/
+    │   │   ├── mipmap-*/
+    │   │   ├── values/
+    │   │   ├── values-night/
+    │   │   └── xml/
+    │   └── java/
+    │       └── com/
+    │           └── example/
+    │               └── smart_attendance_system/
+    ├── test/
+    └── androidTest/
 
 ---
 
@@ -136,76 +138,58 @@ This project is developed for **academic use** to demonstrate:
 ---
 ## 📸 Output Screenshots
 
-This section presents the output screens of the Smart Attendance System application.
+This section shows the output screens of the Smart Attendance System application.
 
 ---
 
 ### 🔐 Login Screen
-![Login Screen](app/screenshots/Screenshot_20251220-115257_Smart%20Attendance%20System.jpg)
-
----
-
-### 👨‍🎓 Student Login
-![Student Login](app/screenshots/Screenshot_20251220-115305_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115257_Smart%20Attendance%20System.jpg" width="300"/>
 
 ---
 
 ### 👨‍🎓 Student Dashboard
-![Student Dashboard](app/screenshots/Screenshot_20251220-115315_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115315_Smart%20Attendance%20System.jpg" width="300"/>
 
 ---
 
 ### 📷 Face Registration
-![Face Registration](app/screenshots/Screenshot_20251220-115456_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115456_Smart%20Attendance%20System.jpg" width="300"/>
 
-![Face Capture](app/screenshots/Screenshot_20251220-115511_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115511_Smart%20Attendance%20System.jpg" width="300"/>
 
 ---
 
 ### ✅ Face Verification
-![Face Verification](app/screenshots/Screenshot_20251220-115528_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115528_Smart%20Attendance%20System.jpg" width="300"/>
 
-![Live Face Capture](app/screenshots/Screenshot_20251220-115545_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115545_Smart%20Attendance%20System.jpg" width="300"/>
 
 ---
 
 ### 📝 Attendance Marked Successfully
-![Attendance Marked](app/screenshots/Screenshot_20251220-115609_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115609_Smart%20Attendance%20System.jpg" width="300"/>
 
-![Presence Recorded](app/screenshots/Screenshot_20251220-115631_Smart%20Attendance%20System.jpg)
-
----
-
-### 👨‍🏫 Faculty Dashboard
-![Faculty Dashboard](app/screenshots/Screenshot_20251220-115659_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115631_Smart%20Attendance%20System.jpg" width="300"/>
 
 ---
 
-### 🗓️ Attendance Session Creation
-![Session Creation](app/screenshots/Screenshot_20251220-115728_Smart%20Attendance%20System.jpg)
+### 👨‍🏫 Faculty Attendance Session
+<img src="app/screenshots/Screenshot_20251220-115659_Smart%20Attendance%20System.jpg" width="300"/>
 
----
-
-### 📋 Attendance in Progress
-![Attendance In Progress](app/screenshots/Screenshot_20251220-115742_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115728_Smart%20Attendance%20System.jpg" width="300"/>
 
 ---
 
 ### 📊 Attendance Report
-![Attendance Report](app/screenshots/Screenshot_20251220-115748_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115748_Smart%20Attendance%20System.jpg" width="300"/>
 
-![Student Attendance View](app/screenshots/Screenshot_20251220-115757_Smart%20Attendance%20System.jpg)
-
-![Detailed Attendance Record](app/screenshots/Screenshot_20251220-115833_Smart%20Attendance%20System.jpg)
-
-![Monthly Attendance Report](app/screenshots/Screenshot_20251220-115841_Smart%20Attendance%20System.jpg)
+<img src="app/screenshots/Screenshot_20251220-115841_Smart%20Attendance%20System.jpg" width="300"/>
 
 ---
 
-### ✅ Session Completion
-![Session Closed](app/screenshots/Screenshot_20251220-115905_Smart%20Attendance%20System.jpg)
+### ✅ Final Output
+<img src="app/screenshots/Screenshot_20251220-120017_Smart%20Attendance%20System.jpg" width="300"/>
 
-![Final Output Screen](app/screenshots/Screenshot_20251220-120017_Smart%20Attendance%20System.jpg)
 
 ## 👤 Author
 

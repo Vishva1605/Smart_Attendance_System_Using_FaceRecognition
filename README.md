@@ -190,6 +190,8 @@ This section shows the output screens of the Smart Attendance System application
 ### ✅ Final Output
 <img src="app/screenshots/Screenshot_20251220-120017_Smart%20Attendance%20System.jpg" width="300"/>
 
+## 📜 License
+This project is licensed under the MIT License.
 
 ## 👤 Author
 

@@ -13,3 +13,17 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Built application files
+*.apk
+*.aar
+*.aab
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services & Sensitive DB exports
+# Note: google-services.json and database exports should remain private/secured
+smart-attendance-system-*-default-rtdb-export.json
+rules.json

@@ -1,200 +1,111 @@
-# 📱 Smart Attendance System (Android)
+# 📱 Smart Attendance System Using Face Recognition (Android)
 
-This repository contains an Android-based **Smart Attendance System** developed using Java and Firebase.  
-The application is designed for academic institutions to manage attendance securely and efficiently, with features to prevent proxy attendance.
-
----
-
-## 📂 Project Structure Overview
-
-The project follows the standard **Android application structure**, organized for clarity and maintainability.
-
-app/
-├── .gitignore
-├── build.gradle
-├── google-services.json
-├── proguard-rules.pro
-└── src/
-    ├── main/
-    │   ├── AndroidManifest.xml
-    │   ├── res/
-    │   │   ├── layout/
-    │   │   ├── drawable/
-    │   │   ├── mipmap-*/
-    │   │   ├── values/
-    │   │   ├── values-night/
-    │   │   └── xml/
-    │   └── java/
-    │       └── com/
-    │           └── example/
-    │               └── smart_attendance_system/
-    ├── test/
-    └── androidTest/
+An intelligent, secure, and automated attendance management Android application built with **Java**, **ML Kit Face Detection**, **MobileFaceNet (TensorFlow Lite)**, and **Firebase Realtime Database**.
 
 ---
 
-## 🧩 Java Package Structure
+## 🌟 Key Features
 
-All core logic is located under:
+### 👨‍🎓 For Students
+- **Biometric Face Verification:** Mark attendance instantly using on-device facial recognition.
+- **One-Time Registration:** Mandatory secure face capture and vector embedding during first-time onboarding.
+- **Anti-Spoofing & Geofencing / Network Checks:** Verifies proximity or authorized institutional WiFi BSSID network to prevent proxy marking.
+- **Personal Attendance Reports:** View subject-wise attendance percentages, dates, and attendance records.
 
-java/com/example/smart_attendance_system/
+### 👩‍🏫 For Faculty
+- **Session Creation:** Select Branch, Year, Section, and Subject with customizable auto-expiration timers (15 mins, 30 mins, 45 mins, 1 hour, or open).
+- **Live Attendance Monitoring:** Real-time visibility into students marking presence as they verify their face.
+- **Reports & Analytics:** Filter and inspect attendance sessions across dates and subjects.
+- **Excel Export:** Generate detailed `.xlsx` attendance sheets directly on device using Apache POI.
 
-
-### 🔐 Authentication & Entry
-- `MainActivity.java` – Application entry point
-- `LoginActivity.java` – Common login handler
-- `LoginStudentActivity.java` – Student login
-- `LoginFacultyActivity.java` – Faculty login
-- `ResetPasswordActivity.java` – Password recovery
-
----
-
-### 👨‍🎓 Student Module
-- `StudentDashboardActivity.java` – Student home screen
-- `FaceRegistrationActivity.java` – One-time face registration
-- `FaceVerificationActivity.java` – Face verification before attendance
-- `PresenceRecordedActivity.java` – Attendance confirmation screen
-- `ActivityAttendanceReportStudent.java` – Student attendance report view
-- `StudentAttendanceAdapter.java` – Adapter for student attendance lists
+### 🛡️ For Administrators
+- Manage faculty and student directories.
+- Monitor active sessions across campus departments.
+- Reset credentials and device bindings.
 
 ---
 
-### 👨‍🏫 Faculty Module
-- `SessionActivity.java` – Start and manage attendance sessions
-- `SelectAttendanceActivity.java` – Select class/section/subject
-- `TakeAttendanceActivity.java` – Attendance monitoring
-- `AttendanceReportActivity.java` – Faculty attendance reports
-- `AttendanceListAdapter.java` – Attendance list adapter
-- `AttendanceReportAdapter.java` – Report adapter
+## 🏗️ Architecture & Technology Stack
+
+```mermaid
+flowchart TD
+    subgraph UI ["User Interface (Android)"]
+        A[CameraX Live Preview] --> B[Face Detection Overlay]
+    end
+
+    subgraph AI ["AI / ML Pipeline"]
+        B -->|Frame| C[Google ML Kit Face Detection]
+        C -->|Cropped Face 112x112| D[MobileFaceNet TFLite]
+        D -->|192-d Vector| E[Cosine / L2 Similarity Comparison]
+    end
+
+    subgraph Backend ["Cloud Infrastructure"]
+        E -->|Verified| F[(Firebase Realtime Database)]
+        G[Firebase Authentication] --> H[Role-based Access Admin / Faculty / Student]
+    end
+```
+
+### Tech Stack Details
+- **Platform:** Android (Min SDK: 26 / Target SDK: 35 — Android 15 ready)
+- **Language:** Java 8+
+- **Machine Learning & Vision:**
+  - Google ML Kit Face Detection (`16.1.7`)
+  - TensorFlow Lite (`2.17.0`) with MobileFaceNet (192-dimensional embeddings)
+  - CameraX (`1.4.0`)
+- **Backend & Cloud:**
+  - Firebase BoM (`35.2.0`)
+  - Firebase Realtime Database
+  - Firebase Authentication
+- **Export & Storage:** Apache POI (`5.3.0`) for Excel (`.xlsx`) generation
 
 ---
 
-### 📷 Camera & Face Recognition
-- `CameraActivity.java` – Camera handling and face capture
-- `FaceRecognitionUtils.java` – Face recognition helper utilities  
-- `CloudFaceRecognitionService.java` – *(Not used; retained only for reference)*
+## ⚙️ Project Setup & Installation
+
+### Prerequisites
+- **Android Studio** Ladybug / Koala Feature Drop (`2024.2+`) or higher.
+- **JDK:** Version 17 (recommended for Gradle 8.7+).
+- **Gradle:** 8.7+ (configured via Gradle Wrapper).
+- A Firebase project with **Email/Password Authentication** and **Realtime Database** enabled.
+
+### Steps
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Vishva1605/Smart_Attendance_System_Using_FaceRecognition.git
+   cd Smart_Attendance_System_Using_FaceRecognition
+   ```
+
+2. **Add `google-services.json`:**
+   - Download `google-services.json` from your Firebase Console.
+   - Place it inside the `app/` directory:
+     ```
+     app/google-services.json
+     ```
+
+3. **Configure Database Rules:**
+   - Refer to `rules.json` for Realtime Database security rules.
+
+4. **Build & Run:**
+   - Open the project in Android Studio.
+   - Sync Gradle files.
+   - Run on an Android device or emulator with camera support (API 26+).
 
 ---
 
-### ⚙️ Utilities & Helpers
-- `DatabaseHelper.java` – Firebase database operations
-- `DeviceUtils.java` – Device identification utilities
-- `NetworkUtils.java` – Network and Wi-Fi validation
-- `PreferenceManager.java` – Local data storage
-- `ValidationUtils.java` – Input validation helpers
-- `Constants.java` – Application-wide constants
-- `SessionAutoCloseService.java` – Auto-closes attendance sessions
+## 🔄 Recent Updates & Improvements (v2.0)
+- **Target SDK Upgrade:** Upgraded from Android 14 (`compileSdk 34`) to Android 15 (`compileSdk 35`, targetSdk 35).
+- **Modern Build System:** Upgraded to Android Gradle Plugin `8.6.1` and Gradle `8.7`.
+- **Dependency Refresh:**
+  - Upgraded Firebase BoM to `35.2.0`.
+  - Upgraded ML Kit Face Detection to `16.1.7`.
+  - Upgraded CameraX to `1.4.0`.
+  - Upgraded AndroidX AppCompat to `1.8.0`, Material Components to `1.14.0`, and RecyclerView to `1.4.0`.
+  - Upgraded Apache POI to `5.3.0`.
+- **Storage & Security Permissions:** Configured modern Android 13+ granular media permissions (`READ_MEDIA_IMAGES`) and capped legacy storage permissions.
+- **Modern Lifecycle Handling:** Migrated back press behavior to `OnBackPressedDispatcher`.
+- **Resource Management:** Added explicit lifecycle cleanup for TensorFlow Lite interpreter instances to eliminate memory leaks.
 
 ---
 
-## 🎨 Resources (`res/`)
-
-### 📐 Layouts
-Contains XML layouts for all activities, dialogs, list items, and UI components, including:
-- Login screens
-- Dashboards
-- Attendance screens
-- Camera and face registration screens
-
-### 🖼️ Drawables & Images
-Includes:
-- Icons
-- Backgrounds
-- Buttons
-- Illustrations used across the app
-
-### 🎨 Values
-- `colors.xml` – App color palette
-- `styles.xml` – UI styles
-- `themes.xml` – Light/Dark themes
-- `strings.xml` – All UI strings
-
----
-
-## 🧪 Testing
-- `test/` – Unit tests
-- `androidTest/` – Instrumentation tests
-
----
-
-## 🛠️ Tech Stack
-
-- **Language:** Java
-- **Platform:** Android
-- **Backend:** Firebase Realtime Database
-- **Authentication:** Firebase Authentication
-- **IDE:** Android Studio
-
----
-
-## 🎓 Purpose
-
-This project is developed for **academic use** to demonstrate:
-- Android application development
-- Firebase integration
-- Secure attendance management
-- Modular and maintainable app structure
-
----
-## 📸 Output Screenshots
-
-This section shows the output screens of the Smart Attendance System application.
-
----
-
-### 🔐 Login Screen
-<img src="app/screenshots/Screenshot_20251220-115257_Smart%20Attendance%20System.jpg" width="300"/>
-
----
-
-### 👨‍🎓 Student Dashboard
-<img src="app/screenshots/Screenshot_20251220-115315_Smart%20Attendance%20System.jpg" width="300"/>
-
----
-
-### 📷 Face Registration
-<img src="app/screenshots/Screenshot_20251220-115456_Smart%20Attendance%20System.jpg" width="300"/>
-
-<img src="app/screenshots/Screenshot_20251220-115511_Smart%20Attendance%20System.jpg" width="300"/>
-
----
-
-### ✅ Face Verification
-<img src="app/screenshots/Screenshot_20251220-115528_Smart%20Attendance%20System.jpg" width="300"/>
-
-<img src="app/screenshots/Screenshot_20251220-115545_Smart%20Attendance%20System.jpg" width="300"/>
-
----
-
-### 📝 Attendance Marked Successfully
-<img src="app/screenshots/Screenshot_20251220-115609_Smart%20Attendance%20System.jpg" width="300"/>
-
-<img src="app/screenshots/Screenshot_20251220-115631_Smart%20Attendance%20System.jpg" width="300"/>
-
----
-
-### 👨‍🏫 Faculty Attendance Session
-<img src="app/screenshots/Screenshot_20251220-115659_Smart%20Attendance%20System.jpg" width="300"/>
-
-<img src="app/screenshots/Screenshot_20251220-115728_Smart%20Attendance%20System.jpg" width="300"/>
-
----
-
-### 📊 Attendance Report
-<img src="app/screenshots/Screenshot_20251220-115748_Smart%20Attendance%20System.jpg" width="300"/>
-
-<img src="app/screenshots/Screenshot_20251220-115841_Smart%20Attendance%20System.jpg" width="300"/>
-
----
-
-### ✅ Final Output
-<img src="app/screenshots/Screenshot_20251220-120017_Smart%20Attendance%20System.jpg" width="300"/>
-
-## 📜 License
-This project is licensed under the MIT License.
-
-## 👤 Author
-
-Vishva K S  
-Undergraduate Student  
-Smart Attendance System – Academic Project
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).

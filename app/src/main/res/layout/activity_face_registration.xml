@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f5f5f5"
+    android:background="?attr/colorSurface"
     android:padding="16dp">
 
     <LinearLayout
@@ -16,10 +16,10 @@
             android:id="@+id/tv_instructions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="📸 Face Registration"
+            android:text="@string/face_registration_title"
             android:textSize="16sp"
-            android:textColor="#333"
-            android:background="#fff"
+            android:textColor="?android:attr/textColorPrimary"
+            android:background="@color/white"
             android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:elevation="2dp" />
@@ -29,7 +29,7 @@
             android:id="@+id/tv_student_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="👤 Student Information"
+            android:text="@string/student_info_title"
             android:textSize="14sp"
             android:textColor="#666"
             android:background="#fff"
@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="📷 Your Reference Photo"
+            android:text="@string/your_reference_photo"
             android:textSize="14sp"
             android:textColor="#333"
             android:textStyle="bold"
@@ -52,10 +52,11 @@
             android:id="@+id/iv_reference_face"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="#ddd"
+            android:background="@color/image_placeholder"
             android:scaleType="centerCrop"
             android:layout_marginBottom="16dp"
-            android:elevation="4dp" />
+            android:elevation="4dp"
+            android:contentDescription="@string/desc_reference_face_image" />
 
         <!-- Registration Status -->
         <TextView
@@ -83,9 +84,9 @@
             android:id="@+id/btn_capture_face"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="📸 Capture Face"
-            android:background="#4CAF50"
-            android:textColor="#fff"
+            android:text="@string/capture_face"
+            android:background="@color/success_color"
+            android:textColor="@color/white"
             android:padding="12dp"
             android:layout_marginBottom="12dp" />
 
@@ -93,9 +94,9 @@
             android:id="@+id/btn_register_face"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="✅ Register Face"
-            android:background="#2196F3"
-            android:textColor="#fff"
+            android:text="@string/register_face"
+            android:background="@color/primary_color"
+            android:textColor="@color/white"
             android:padding="12dp"
             android:layout_marginBottom="12dp"
             android:visibility="gone" />
@@ -104,9 +105,9 @@
             android:id="@+id/btn_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="⬅️ Back"
-            android:background="#757575"
-            android:textColor="#fff"
+            android:text="@string/back"
+            android:background="@color/text_secondary"
+            android:textColor="@color/white"
             android:padding="12dp" />
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".FacultyHistoryActivity">
+
+    <!-- Header with clean gradient background if possible, or plain color -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/light_blue_50"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📜 Attendance History"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/main_700"
+            android:textAlignment="center" />
+        
+        <TextView
+            android:id="@+id/tv_faculty_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="faculty@saec.ac.in"
+            android:textAlignment="center"
+            android:textColor="@color/main_500"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <!-- Loading / Empty State -->
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading sessions..."
+        android:textAlignment="center"
+        android:padding="32dp"
+        android:textColor="@color/darker_gray"
+        android:visibility="gone"/>
+
+    <!-- Expandable List View -->
+    <ExpandableListView
+        android:id="@+id/elv_history"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:groupIndicator="@null"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="⬅️ Back to Dashboard"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        style="?android:attr/borderlessButtonStyle"
+        android:stateListAnimator="@null"
+        android:elevation="4dp"/>
+
+</LinearLayout>

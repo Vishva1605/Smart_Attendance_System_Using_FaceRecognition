@@ -12,8 +12,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp"
         android:gravity="center_horizontal">
+
+        <!-- Toolbar with Back Button -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/main_500"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_back_arrow"
+                    android:contentDescription="Back"
+                    app:tint="@color/white"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📊 Live Attendance"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="16dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <!-- Session Status Indicator -->
         <androidx.cardview.widget.CardView
@@ -30,8 +69,8 @@
                 android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:src="@drawable/loading_pic"
-                android:contentDescription="Session Status"
-                android:scaleType="centerInside" />
+                android:scaleType="centerInside"
+                android:contentDescription="@string/desc_session_status" />
         </androidx.cardview.widget.CardView>
 
         <!-- Session Details Card -->
@@ -52,7 +91,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="📚 Session Details"
+                    android:text="@string/session_details_title"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/main_500"
@@ -62,7 +101,7 @@
                     android:id="@+id/tv_session_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Session details will appear here..."
+                    android:text="@string/session_details_placeholder"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:lineSpacingExtra="4dp" />
@@ -87,7 +126,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="📊 Session Status"
+                    android:text="@string/session_status_title"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/green_700"
@@ -97,7 +136,7 @@
                     android:id="@+id/tv_session_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Creating session..."
+                    android:text="@string/creating_session"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -123,7 +162,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="👥 Attendance Statistics"
+                    android:text="@string/attendance_statistics"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/orange_700"
@@ -133,7 +172,7 @@
                     android:id="@+id/tv_student_count"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Class Strength: 0\nPresent: 0\nAbsent: 0\nAttendance: 0%"
+                    android:text="@string/class_strength_format"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:lineSpacingExtra="4dp"
@@ -148,7 +187,7 @@
             android:layout_height="56dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/style_button"
-            android:text="👀 View Live Attendance"
+            android:text="@string/view_live_attendance"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -159,7 +198,7 @@
             android:layout_height="56dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/style_button_secondary"
-            android:text="🔄 Refresh Count"
+            android:text="@string/refresh_count"
             android:textAllCaps="false"
             android:textSize="16sp" />
 
@@ -167,7 +206,7 @@
             android:id="@+id/btn_end_session"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="⏹️ End Session"
+            android:text="@string/end_session"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:textStyle="bold"

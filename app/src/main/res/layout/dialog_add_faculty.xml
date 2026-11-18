@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/et_faculty_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Faculty Name"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/et_faculty_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/et_faculty_department"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Department (e.g., Computer Science)"
+        android:inputType="text"
+        android:layout_marginBottom="12dp"/>
+
+</LinearLayout>

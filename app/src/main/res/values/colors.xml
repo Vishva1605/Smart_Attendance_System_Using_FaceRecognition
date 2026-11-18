@@ -87,4 +87,5 @@
     <color name="info_background">#E3F2FD</color>        <!-- same as info_light -->
     <color name="success_background">#C8E6C9</color>    <!-- same as success_light -->
     <color name="blue_500">#2196F3</color>             <!-- same as main_500 -->
+    <color name="gray_200">#EEEEEE</color>
 </resources>

@@ -46,7 +46,7 @@
             android:id="@+id/tv_enrollment_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2021CSE001"
+            android:text="Enrollment No"
             android:textColor="@android:color/black"
             android:textSize="14sp"
             android:layout_marginTop="4dp" />
@@ -56,8 +56,8 @@
             android:id="@+id/tv_student_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="rohan.mehta@saec.ac.in"
-            android:textColor="@android:color/darker_gray"
+            android:text="student@email.com"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
             android:layout_marginTop="2dp" />
 
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Marked: 10:05 AM"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@android:color/black"
             android:textSize="13sp"
             android:layout_marginTop="4dp" />
 

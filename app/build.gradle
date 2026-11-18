@@ -1,25 +1,18 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
-    id 'org.jetbrains.kotlin.android'
 }
 
 android {
     namespace 'com.example.smart_attendance_system'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.example.smart_attendance_system"
-        minSdk 28
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        minSdk 26
+        targetSdk 35
+        versionCode 2
+        versionName "2.0"
     }
 
     buildTypes {
@@ -28,77 +21,50 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    buildFeatures {
-        compose true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.4.3'
-    }
-
+    
     packaging {
         resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            // Apache POI pulls in duplicate META-INF files; exclude them to avoid build conflicts
+            excludes += ['META-INF/DEPENDENCIES', 'META-INF/LICENSE', 'META-INF/LICENSE.txt',
+                         'META-INF/NOTICE', 'META-INF/NOTICE.txt', 'META-INF/*.RSA',
+                         'META-INF/*.SF', 'META-INF/*.DSA']
         }
     }
 }
 
 dependencies {
-    // ✅ Core Android
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.appcompat:appcompat:1.8.0'
+    implementation 'com.google.android.material:material:1.14.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
 
-    // ✅ Firebase (using BOM for version sync)
-    implementation platform('com.google.firebase:firebase-bom:33.5.1')
-    implementation 'com.google.firebase:firebase-auth'
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:35.2.0')
     implementation 'com.google.firebase:firebase-database'
-    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-auth'
 
-    // ✅ ML Kit Face Detection
-    implementation 'com.google.mlkit:face-detection:16.1.5'
+    // ML Kit Face Detection (bundled model)
+    implementation 'com.google.mlkit:face-detection:16.1.7'
 
-    // ✅ CameraX
-    implementation 'androidx.camera:camera-core:1.3.1'
-    implementation 'androidx.camera:camera-camera2:1.3.1'
-    implementation 'androidx.camera:camera-lifecycle:1.3.1'
-    implementation 'androidx.camera:camera-view:1.3.1'
+    // CameraX
+    def camerax_version = "1.4.0"
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-view:${camerax_version}"
 
-    // ✅ Excel (Apache POI)
-    implementation 'org.apache.poi:poi:5.2.4'
-    implementation 'org.apache.poi:poi-ooxml:5.2.4'
+    // Guava
+    implementation 'com.google.guava:guava:33.3.1-android'
 
-    // ✅ Networking (Cloud API, AWS, etc.)
-    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    // Apache POI for Excel Export
+    implementation 'org.apache.poi:poi:5.3.0'
+    implementation 'org.apache.poi:poi-ooxml:5.3.0'
 
-    // ✅ Image Loading
-    implementation 'com.github.bumptech.glide:glide:4.16.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
-
-    // ✅ Jetpack Compose (if needed for UI)
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation 'androidx.compose.ui:ui'
-    implementation 'androidx.compose.ui:ui-graphics'
-    implementation 'androidx.compose.ui:ui-tooling-preview'
-    implementation 'androidx.compose.material3:material3'
-    implementation 'androidx.activity:activity-compose:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
-
-    // ✅ Testing
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    debugImplementation 'androidx.compose.ui:ui-tooling'
-    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    // TensorFlow Lite (legacy — compatible with existing mobilefacenet.tflite model)
+    implementation 'org.tensorflow:tensorflow-lite:2.17.0'
 }

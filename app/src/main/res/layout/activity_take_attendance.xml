@@ -20,7 +20,7 @@
             android:id="@+id/tv_welcome_faculty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome, Faculty"
+            android:text="@string/welcome_faculty"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -31,7 +31,7 @@
             android:id="@+id/tv_instructions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select class details below to start an attendance session."
+            android:text="@string/select_class_details"
             android:textColor="@color/darker_gray"
             android:textSize="14sp"
             android:layout_marginBottom="20dp" />
@@ -41,9 +41,9 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/image_attendance_two"
-            android:contentDescription="@string/app_name"
             android:scaleType="centerInside"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/desc_attendance_image" />
 
         <!-- Branch Spinner -->
         <androidx.cardview.widget.CardView
@@ -109,39 +109,58 @@
                 android:spinnerMode="dropdown" />
         </androidx.cardview.widget.CardView>
 
+        <!-- Duration Spinner -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <Spinner
+                android:id="@+id/spinner_duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:spinnerMode="dropdown" />
+        </androidx.cardview.widget.CardView>
+
         <!-- Start Attendance Button -->
         <Button
             android:id="@+id/btn_start_session"
             style="@style/button_style"
-            android:text="Start Attendance Session" />
+            android:text="@string/start_attendance_session"
+            android:layout_marginTop="16dp" />
 
         <!-- View Reports Button -->
         <Button
             android:id="@+id/btn_view_reports"
             style="@style/button_style"
-            android:text="View Attendance Reports"
-            android:layout_marginTop="12dp" />
-
-        <!-- Logout Button -->
-        <Button
-            android:id="@+id/btn_logout"
-            style="@style/button_style"
-            android:text="Logout"
-            android:layout_marginTop="12dp" />
+            android:text="@string/view_attendance_reports"
+            android:layout_marginTop="16dp" />
 
         <!-- Reset Password Button -->
         <Button
             android:id="@+id/btn_reset_password"
             style="@style/button_style"
-            android:text="Reset Password"
-            android:layout_marginTop="12dp" />
+            android:text="@string/reset_password"
+            android:layout_marginTop="16dp" />
+
+        <!-- Logout Button -->
+        <Button
+            android:id="@+id/btn_logout"
+            style="@style/button_style"
+            android:text="@string/logout"
+            android:backgroundTint="@color/red_500"
+            android:layout_marginTop="32dp" />
+
 
         <!-- Footer -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Secure • Reliable • Efficient"
+            android:text="@string/app_tagline"
             android:textColor="@color/darker_gray"
             android:textSize="12sp"
             android:layout_marginTop="20dp"

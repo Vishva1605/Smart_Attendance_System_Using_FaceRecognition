@@ -96,7 +96,8 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Attendance List -->
+
+        <!-- Attendance List with Scroll Space -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,14 +107,39 @@
             android:textColor="@color/main_500"
             android:layout_marginBottom="8dp" />
 
-        <ListView
-            android:id="@+id/lv_attendance_list"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@color/darker_gray"
-            android:dividerHeight="0.5dp"
-            android:nestedScrollingEnabled="true"
-            android:layout_marginBottom="20dp" />
+            android:layout_height="400dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Scroll hint -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="👇 Scroll to view all students"
+                    android:textSize="12sp"
+                    android:textColor="@color/darker_gray"
+                    android:textAlignment="center"
+                    android:padding="8dp"
+                    android:background="@color/light_blue_50" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_attendance_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical"
+                    android:fadeScrollbars="false" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
 
         <!-- Action Buttons -->
         <LinearLayout

@@ -1,4 +1,8 @@
-# 📱 Smart Attendance System Using Face Recognition (Android)
+<p align="center">
+  <img src="app/screenshots/banner.jpg" alt="Smart Attendance System Banner" width="100%" />
+</p>
+
+# 📱 Smart Attendance System Using Face Recognition
 
 An intelligent, secure, and automated attendance management Android application built with **Java**, **ML Kit Face Detection**, **MobileFaceNet (TensorFlow Lite)**, and **Firebase Realtime Database**.
 
@@ -7,103 +11,94 @@ An intelligent, secure, and automated attendance management Android application 
 ## 🌟 Key Features
 
 ### 👨‍🎓 For Students
-- **Biometric Face Verification:** Mark attendance instantly using on-device facial recognition.
-- **One-Time Registration:** Mandatory secure face capture and vector embedding during first-time onboarding.
-- **Anti-Spoofing & Geofencing / Network Checks:** Verifies proximity or authorized institutional WiFi BSSID network to prevent proxy marking.
-- **Personal Attendance Reports:** View subject-wise attendance percentages, dates, and attendance records.
+- **Biometric Face Verification:** Instant on-device facial recognition to mark attendance.
+- **One-Time Registration:** Mandatory secure face capture and 192-d embedding extraction on first login.
+- **Anti-Proxy Protection:** BSSID/institutional Wi-Fi validation combined with biometric match.
+- **Attendance Records:** Subject-wise percentage, history, and status tracking.
 
 ### 👩‍🏫 For Faculty
-- **Session Creation:** Select Branch, Year, Section, and Subject with customizable auto-expiration timers (15 mins, 30 mins, 45 mins, 1 hour, or open).
-- **Live Attendance Monitoring:** Real-time visibility into students marking presence as they verify their face.
-- **Reports & Analytics:** Filter and inspect attendance sessions across dates and subjects.
-- **Excel Export:** Generate detailed `.xlsx` attendance sheets directly on device using Apache POI.
+- **Session Management:** Start attendance sessions with customizable auto-expiration timers (15m, 30m, 45m, 1h).
+- **Real-Time Tracking:** Live counter of present students updating as they scan.
+- **Reports & Excel Export:** Generate and share `.xlsx` attendance reports on-device via Apache POI.
 
 ### 🛡️ For Administrators
-- Manage faculty and student directories.
-- Monitor active sessions across campus departments.
-- Reset credentials and device bindings.
+- Student & Faculty record management.
+- Active campus session monitoring and device authorization control.
 
 ---
 
-## 🏗️ Architecture & Technology Stack
+## 📸 App Screenshots & Outputs
+
+<details open>
+<summary><b>Click to expand / collapse screenshot gallery</b></summary>
+<br>
+
+<table align="center">
+  <tr>
+    <td align="center"><b>🔐 Login</b></td>
+    <td align="center"><b>👨‍🎓 Student Dashboard</b></td>
+    <td align="center"><b>📷 Face Registration</b></td>
+  </tr>
+  <tr>
+    <td><img src="app/screenshots/Screenshot_20251220-115257_Smart%20Attendance%20System.jpg" width="230"/></td>
+    <td><img src="app/screenshots/Screenshot_20251220-115315_Smart%20Attendance%20System.jpg" width="230"/></td>
+    <td><img src="app/screenshots/Screenshot_20251220-115456_Smart%20Attendance%20System.jpg" width="230"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>✅ Face Verification</b></td>
+    <td align="center"><b>📝 Presence Recorded</b></td>
+    <td align="center"><b>👨‍🏫 Take Attendance</b></td>
+  </tr>
+  <tr>
+    <td><img src="app/screenshots/Screenshot_20251220-115545_Smart%20Attendance%20System.jpg" width="230"/></td>
+    <td><img src="app/screenshots/Screenshot_20251220-115609_Smart%20Attendance%20System.jpg" width="230"/></td>
+    <td><img src="app/screenshots/Screenshot_20251220-115659_Smart%20Attendance%20System.jpg" width="230"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>⏱️ Active Session</b></td>
+    <td align="center"><b>📊 Attendance Report</b></td>
+    <td align="center"><b>📈 Student Analytics</b></td>
+  </tr>
+  <tr>
+    <td><img src="app/screenshots/Screenshot_20251220-115728_Smart%20Attendance%20System.jpg" width="230"/></td>
+    <td><img src="app/screenshots/Screenshot_20251220-115748_Smart%20Attendance%20System.jpg" width="230"/></td>
+    <td><img src="app/screenshots/Screenshot_20251220-120017_Smart%20Attendance%20System.jpg" width="230"/></td>
+  </tr>
+</table>
+
+</details>
+
+---
+
+## 🛠️ Architecture & Tech Stack
 
 ```mermaid
-flowchart TD
-    subgraph UI ["User Interface (Android)"]
-        A[CameraX Live Preview] --> B[Face Detection Overlay]
-    end
-
-    subgraph AI ["AI / ML Pipeline"]
-        B -->|Frame| C[Google ML Kit Face Detection]
-        C -->|Cropped Face 112x112| D[MobileFaceNet TFLite]
-        D -->|192-d Vector| E[Cosine / L2 Similarity Comparison]
-    end
-
-    subgraph Backend ["Cloud Infrastructure"]
-        E -->|Verified| F[(Firebase Realtime Database)]
-        G[Firebase Authentication] --> H[Role-based Access Admin / Faculty / Student]
-    end
+flowchart LR
+    A[CameraX Preview] --> B[ML Kit Detection]
+    B -->|Cropped Face 112x112| C[MobileFaceNet TFLite]
+    C -->|192-d Vector| D[Cosine Similarity Match]
+    D -->|Verified| E[(Firebase RTDB)]
 ```
 
-### Tech Stack Details
-- **Platform:** Android (Min SDK: 26 / Target SDK: 35 — Android 15 ready)
-- **Language:** Java 8+
-- **Machine Learning & Vision:**
-  - Google ML Kit Face Detection (`16.1.7`)
-  - TensorFlow Lite (`2.17.0`) with MobileFaceNet (192-dimensional embeddings)
-  - CameraX (`1.4.0`)
-- **Backend & Cloud:**
-  - Firebase BoM (`35.2.0`)
-  - Firebase Realtime Database
-  - Firebase Authentication
-- **Export & Storage:** Apache POI (`5.3.0`) for Excel (`.xlsx`) generation
+- **Target / Compile SDK:** Android 15 (API 35) • **Min SDK:** Android 8.0 (API 26)
+- **Computer Vision:** Google ML Kit Face Detection (`16.1.7`) + CameraX (`1.4.0`)
+- **Deep Learning Inference:** TensorFlow Lite (`2.17.0`) with MobileFaceNet (192-d vectors)
+- **Backend & Auth:** Firebase BoM (`35.2.0`) Realtime Database & Authentication
+- **Export Engine:** Apache POI (`5.3.0`) for Excel (`.xlsx`) generation
 
 ---
 
-## ⚙️ Project Setup & Installation
+## ⚙️ Quick Start
 
-### Prerequisites
-- **Android Studio** Ladybug / Koala Feature Drop (`2024.2+`) or higher.
-- **JDK:** Version 17 (recommended for Gradle 8.7+).
-- **Gradle:** 8.7+ (configured via Gradle Wrapper).
-- A Firebase project with **Email/Password Authentication** and **Realtime Database** enabled.
-
-### Steps
-1. **Clone the repository:**
+1. **Clone the repo:**
    ```bash
    git clone https://github.com/Vishva1605/Smart_Attendance_System_Using_FaceRecognition.git
-   cd Smart_Attendance_System_Using_FaceRecognition
    ```
-
-2. **Add `google-services.json`:**
-   - Download `google-services.json` from your Firebase Console.
-   - Place it inside the `app/` directory:
-     ```
-     app/google-services.json
-     ```
-
-3. **Configure Database Rules:**
-   - Refer to `rules.json` for Realtime Database security rules.
-
-4. **Build & Run:**
-   - Open the project in Android Studio.
-   - Sync Gradle files.
-   - Run on an Android device or emulator with camera support (API 26+).
-
----
-
-## 🔄 Recent Updates & Improvements (v2.0)
-- **Target SDK Upgrade:** Upgraded from Android 14 (`compileSdk 34`) to Android 15 (`compileSdk 35`, targetSdk 35).
-- **Modern Build System:** Upgraded to Android Gradle Plugin `8.6.1` and Gradle `8.7`.
-- **Dependency Refresh:**
-  - Upgraded Firebase BoM to `35.2.0`.
-  - Upgraded ML Kit Face Detection to `16.1.7`.
-  - Upgraded CameraX to `1.4.0`.
-  - Upgraded AndroidX AppCompat to `1.8.0`, Material Components to `1.14.0`, and RecyclerView to `1.4.0`.
-  - Upgraded Apache POI to `5.3.0`.
-- **Storage & Security Permissions:** Configured modern Android 13+ granular media permissions (`READ_MEDIA_IMAGES`) and capped legacy storage permissions.
-- **Modern Lifecycle Handling:** Migrated back press behavior to `OnBackPressedDispatcher`.
-- **Resource Management:** Added explicit lifecycle cleanup for TensorFlow Lite interpreter instances to eliminate memory leaks.
+2. **Add Firebase configuration:**
+   - Place your `google-services.json` inside the `app/` folder.
+3. **Build & Run:**
+   - Open in **Android Studio** (Koala / Ladybug or newer recommended with JDK 17+).
+   - Sync Gradle and run on a camera-enabled device (API 26+).
 
 ---
 

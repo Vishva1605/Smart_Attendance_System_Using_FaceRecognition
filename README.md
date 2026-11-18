@@ -70,15 +70,77 @@ An intelligent, secure, and automated attendance management Android application 
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+## 🗂️ Project Structure
+
+```text
+Smart_Attendance_System/
+├── app/
+│   ├── src/main/
+│   │   ├── AndroidManifest.xml
+│   │   ├── assets/
+│   │   │   └── mobilefacenet.tflite          # Pre-trained 192-d face embedding model
+│   │   ├── java/com/example/smart_attendance_system/
+│   │   │   ├── adapters/                     # RecyclerView adapters (Students, Faculty, Reports)
+│   │   │   ├── data/                         # Data models (Student, Faculty, Session, Record)
+│   │   │   ├── services/                     # Background services (SessionAutoCloseService)
+│   │   │   ├── ui/
+│   │   │   │   ├── admin/                    # Admin dashboard & management activities
+│   │   │   │   ├── auth/                     # Role-based login & password recovery
+│   │   │   │   ├── common/                   # Splash, CameraX & Face Registration/Verification
+│   │   │   │   ├── faculty/                  # Session creation, live tracking & report exports
+│   │   │   │   └── student/                  # Attendance scanning, confirmation & analytics
+│   │   │   └── utils/                        # ML Kit, TFLite inference, Wi-Fi & Device utils
+│   │   └── res/                              # Layout XMLs, drawables, animations & styles
+│   └── build.gradle
+├── gradle/wrapper/                           # Gradle 8.7 wrapper distribution
+├── build.gradle                              # Root AGP 8.6.1 configuration
+└── README.md
+```
+
+---
+
+## 🔄 Application Flow
 
 ```mermaid
-flowchart LR
-    A[CameraX Preview] --> B[ML Kit Detection]
-    B -->|Cropped Face 112x112| C[MobileFaceNet TFLite]
-    C -->|192-d Vector| D[Cosine Similarity Match]
-    D -->|Verified| E[(Firebase RTDB)]
+flowchart TD
+    Start([App Launch / Splash]) --> RoleCheck{Select Role}
+
+    %% Authentication
+    RoleCheck -->|Student| LoginS[Student Login]
+    RoleCheck -->|Faculty| LoginF[Faculty Login]
+    RoleCheck -->|Admin| LoginA[Admin Login]
+
+    %% Admin Flow
+    LoginA --> AdminDash[Admin Dashboard]
+    AdminDash --> Manage[Manage Students & Faculty / Sessions]
+
+    %% Faculty Flow
+    LoginF --> FacDash[Faculty Dashboard]
+    FacDash --> CreateSess[Create Attendance Session\nBranch, Year, Subject, Timer]
+    CreateSess --> LiveTrack[Live Session Attendance Tracking]
+    LiveTrack --> ExportXlsx[Export .XLSX Attendance Report]
+
+    %% Student Flow
+    LoginS --> CheckReg{First Login?}
+    CheckReg -->|Yes| FaceReg[Mandatory Face Registration\nExtract & Store 192-d Embedding]
+    FaceReg --> StudDash[Student Dashboard]
+    CheckReg -->|No| StudDash
+
+    StudDash --> ScanAtt[Join Active Session]
+    ScanAtt --> WifiCheck{University Wi-Fi\nBSSID Valid?}
+    WifiCheck -->|No| Block[Attendance Rejected]
+    WifiCheck -->|Yes| CamScan[CameraX Face Verification]
+    
+    CamScan --> ModelInference[ML Kit Detection + MobileFaceNet TFLite]
+    ModelInference --> MatchCheck{Cosine Sim >= Threshold?}
+    MatchCheck -->|No| Retry[Verification Failed]
+    MatchCheck -->|Yes| Success[Mark Present in Firebase RTDB]
+    Success --> ReportView[View Personal Attendance Analytics]
 ```
+
+---
+
+## 🛠️ Tech Stack & Specifications
 
 - **Target / Compile SDK:** Android 15 (API 35) • **Min SDK:** Android 8.0 (API 26)
 - **Computer Vision:** Google ML Kit Face Detection (`16.1.7`) + CameraX (`1.4.0`)

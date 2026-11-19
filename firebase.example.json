@@ -1,0 +1,20 @@
+{
+  "students": {
+    "111922CS00001": {
+      "name": "Sample Student",
+      "email": "student@example.edu",
+      "branch": "CSE",
+      "year": "4",
+      "section": "A",
+      "hardware_id": "",
+      "face_data": "null"
+    }
+  },
+  "faculty": {
+    "faculty_cse_001": {
+      "name": "Sample Faculty",
+      "email": "faculty@example.edu",
+      "department": "Computer Science"
+    }
+  }
+}
